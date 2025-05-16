@@ -6,8 +6,7 @@ size = comm.Get_size()
 if rank == 0:
     for i in range(size):
         comm.send(i, dest=i)
-else:
-    pass 
+
 received_number = comm.recv(source=0)
 squared = received_number ** 2
 if rank == 0:
